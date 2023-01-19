@@ -9,7 +9,6 @@ async function getFacts(year: string) {
     // console.log(url + year + '/year');
     const facts = await response.json();
     return facts;
-    yearInput.innerHTML = "";
 }
 
 submitButton.addEventListener("click", (event) => {
