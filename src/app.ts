@@ -2,10 +2,11 @@ const submitButton = document.querySelector("button") as HTMLButtonElement;
 const displayFact = document.querySelector(".display-fact") as HTMLParagraphElement;
 const yearInput = document.getElementById('year-input') as HTMLInputElement;
 
-const url = "http://numbersapi.com/random/year?json";
+const url = "http://numbersapi.com/json";
 
-async function getFacts() {
-    const response = await fetch(url);
+async function getFacts(year: string) {
+    const response = await fetch(url + year + '/year');
+    console.log(url + year + '/year');
     const facts = await response.json();
     return facts;
 }
@@ -14,8 +15,9 @@ submitButton.addEventListener("click", (event) => {
     event.preventDefault();
     // console.log("hello");
     if (yearInput.value.length > 0) {
-        getFacts().then((facts) => {
+        getFacts(yearInput.value).then((facts) => {
             displayFact.innerHTML = facts.text;
+
         });
 
     }
