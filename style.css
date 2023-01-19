@@ -1,13 +1,21 @@
 .submit-number {
-    margin: 100px;
+    margin: 50px;
     text-align: center;
+    font-family: 'Source Sans 3', sans-serif;
 }
 
 h1 {
     margin: 70px;
     text-align: center;
+    font-family: 'Source Sans 3', sans-serif;
+
 }
 
-h2 {
-    font-size: ;
+p {
+    font-family: 'Source Sans 3', sans-serif;
+    text-align: center;
+}
+
+.submit-button {
+    font-family: 'Source Sans 3', sans-serif;
 }
