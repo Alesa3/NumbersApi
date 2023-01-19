@@ -8,22 +8,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const submitButton = document.querySelector("button");
-const displayFact = document.querySelector(".display-fact");
-const yearInput = document.getElementById('year-input');
-const url = "http://numbersapi.com/random/year?json";
+const button = document.querySelector("button");
+const loader = document.querySelector(".loader");
+const url = "http://numbersapi.com/random/year";
 function getFacts() {
     return __awaiter(this, void 0, void 0, function* () {
         const response = yield fetch(url);
-        const facts = yield response.json();
-        return facts;
+        const data = yield response.json();
+        console.log("hej");
+        return data;
     });
 }
-submitButton.addEventListener("click", (event) => {
-    event.preventDefault();
-    if (yearInput.value.length > 0) {
-        getFacts().then((facts) => {
-            displayFact.innerHTML = facts.text;
-        });
-    }
-});
+// button.addEventListener("click", (event) => {
+//     event.preventDefault();
+//     loader.classList.remove("loader");
+//     getFacts().then((data)) => 
+//     }
+// })
