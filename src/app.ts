@@ -5,19 +5,22 @@ const yearInput = document.getElementById('year-input') as HTMLInputElement;
 const url = "http://numbersapi.com/";
 
 async function getFacts(year: string) {
-    const response = await fetch(url + year + '/year');
-    console.log(url + year + '/year');
+    const response = await fetch(url + year + '/year' + '?json');
+    // console.log(url + year + '/year');
     const facts = await response.json();
     return facts;
+    yearInput.innerHTML = "";
 }
 
 submitButton.addEventListener("click", (event) => {
     event.preventDefault();
     // console.log("hello");
+
     if (yearInput.value.length > 0) {
         getFacts(yearInput.value).then((facts) => {
             displayFact.innerHTML = facts.text;
 
+            yearInput.value = "";
         });
 
     }

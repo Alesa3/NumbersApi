@@ -11,13 +11,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 const submitButton = document.querySelector("button");
 const displayFact = document.querySelector(".display-fact");
 const yearInput = document.getElementById('year-input');
-const url = "http://numbersapi.com/json";
+const url = "http://numbersapi.com/";
 function getFacts(year) {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch(url + year + '/year');
-        console.log(url + year + '/year');
+        const response = yield fetch(url + year + '/year' + '?json');
         const facts = yield response.json();
         return facts;
+        yearInput.innerHTML = "";
     });
 }
 submitButton.addEventListener("click", (event) => {
@@ -25,6 +25,7 @@ submitButton.addEventListener("click", (event) => {
     if (yearInput.value.length > 0) {
         getFacts(yearInput.value).then((facts) => {
             displayFact.innerHTML = facts.text;
+            yearInput.value = "";
         });
     }
 });
