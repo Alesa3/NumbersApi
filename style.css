@@ -20,10 +20,11 @@ p {
     font-family: 'Source Sans 3', sans-serif;
     border-radius: 20px;
     border: 0px solid grey;
-    padding-right: 12px;
-    padding-left: 12px;
+    padding-right: 16px;
+    padding-left: 16px;
     color: rgb(90, 167, 218);
     font-weight: bold;
+    font-size: 16px;
 }
 
 #year-input {
@@ -31,4 +32,5 @@ p {
     border-radius: 10px;
     padding: 5px;
     margin: 5px;
+
 }
