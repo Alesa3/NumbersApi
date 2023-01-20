@@ -17,7 +17,6 @@ function getFacts(year) {
         const response = yield fetch(url + year + '/year' + '?json');
         const facts = yield response.json();
         return facts;
-        yearInput.innerHTML = "";
     });
 }
 submitButton.addEventListener("click", (event) => {
