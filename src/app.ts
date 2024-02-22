@@ -2,7 +2,7 @@ const submitButton = document.querySelector("button") as HTMLButtonElement;
 const displayFact = document.querySelector(".display-fact") as HTMLParagraphElement;
 const yearInput = document.getElementById('year-input') as HTMLInputElement;
 
-const url = "http://numbersapi.com/";
+const url = "https://numbersapi.com/";
 
 async function getFacts(year: string) {
     const response = await fetch(url + year + '/year' + '?json');
